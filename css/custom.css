@@ -1,0 +1,13 @@
+body {
+    background-color: #272D2D;
+}
+
+h1, .navbar-brand {
+    color: #D44D5C;
+    font-family: 'Kavoon', serif;
+}
+
+.navbar {
+    background-color: #302D2C;
+    color: #F4F4F4;
+}
