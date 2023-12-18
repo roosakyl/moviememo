@@ -1,8 +1,19 @@
-//const apikey = process.env.API_KEY;
+$('#mainSearchButton').on("click", function (event) {
+  event.preventDefault();
+  let movieName = $('#movieName').val();
+  console.log(movieName);
+  fetchFilmApi(movieName);
+});
 
-$('#searchButton').click(function(e) {
-  e.preventDefault();
-  $.get('"http://www.omdbapi.com/?apikey=' + API_KEY + '&t=lord+of+the+rings"', function(data, status){
-    console.log("Data: " + data + "\nStatus: " + status);
+$('#navSearchButton').on("click", function (event) {
+  event.preventDefault();
+  fetchFilmApi();
+});
+
+function fetchFilmApi(movieName) {
+  console.log("hehe");
+  const functionAddress = '../../.netlify/functions/api_requests2?t=' + movieName;
+  $.get(functionAddress, function(data, status){
+    alert("Data: " + data + "\nStatus: " + status);
   });
-})
+}
