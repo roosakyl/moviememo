@@ -11,3 +11,15 @@ h1, .navbar-brand {
     background-color: #302D2C;
     color: #F4F4F4;
 }
+
+#results {
+    padding-top: 1em;
+}
+
+.moviedata img {
+    height: 50%;
+}
+
+ol {
+    list-style: none;
+}
