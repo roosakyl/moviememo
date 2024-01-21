@@ -1,7 +1,7 @@
 exports.handler = async (event, context) => {
   console.log("parameters: ", event.queryStringParameters['t']);
 
-    const apiCall = 'http://www.omdbapi.com/?apikey=' + process.env.API_KEY + '&s=' + event.queryStringParameters['t'].split(" ").join("-");
+    const apiCall = 'http://www.omdbapi.com/?apikey=' + process.env.API_KEY + '&' + event.queryStringParameters['searchType'] + '=' + event.queryStringParameters['t'].split(" ").join("-");
     console.log(apiCall);
 
     const responseData = await fetch(apiCall);

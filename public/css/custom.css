@@ -16,10 +16,21 @@ h1, .navbar-brand {
     padding-top: 1em;
 }
 
-.moviedata img {
-    height: 50%;
-}
-
 ol {
     list-style: none;
+}
+
+.searchresult-item {
+    padding: 32px;
+    background: #3E3136;
+    border-radius: 32px;
+    box-shadow: 8px 8px 10px #151414;
+}
+
+.search-poster {
+    width: 80%;
+}
+
+.row {
+    margin-bottom: 32px;
 }
