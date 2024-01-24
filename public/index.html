@@ -27,12 +27,12 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="index.html">Home</a>
               </li>
-              <li class="nav-item">
+              <!--<li class="nav-item">
                 <a class="nav-link" href="mylists.html">My lists</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
+              </li>-->
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" id="navSearchInput" type="search" placeholder="Search" aria-label="Search">
@@ -43,12 +43,14 @@
       </nav>
 
     <div class="container">
-    <h1>MovieMemo</h1>
+    <!--<h1>MovieMemo</h1>-->
 
-    <form>
-    <input id="movieName" type="text">
-    <button id="mainSearchButton">Etsi elokuva</button>
-    </form>
+    <div class="searchbox-container">
+      <form id="searchbox">
+      <input class="form-control" id="movieName" type="text">
+      <button class="btn btn-primary" id="mainSearchButton">Search</button>
+      </form>
+  </div>
 
     <div id="demo"></div>
 
@@ -61,21 +63,47 @@
 
 
     <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="movieModal" tabindex="-1" role="dialog" aria-labelledby="movieModalLabel" aria-hidden="true" data-bs-theme="dark">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h2 class="modal-title" id="movieLabel">Modal title</h2>
+        <button type="button" onclick="closemodal()" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <div class="loader" id="modal-loader" display="none" aria-hidden="true"></div>
       <div class="modal-body">
-        ...
+        <div class="row">
+          <div class="col-md-3">
+            <img id="modal-movie-poster" class="modal-poster" src=""/>
+          </div>
+          <div class="col-md-9">
+            <div class="content">
+              <h3>Year</h3>
+              <p id="modal-year"></p>
+              <h3>Director</h3>
+              <p id="director"></p>
+              <h3>Genre</h3>
+              <p id="genre"></p>
+              <h3>Plot</h3>
+              <p id="plot"></p>
+              <h3>Starring</h3>
+              <p id="starring"></p>
+              <h3>Runtime</h3>
+              <p id="runtime"></p>
+              <h3>Language</h3>
+              <p id="language"></p>
+              <h3>Country</h3>
+              <p id="country"></p>
+              <h3>Awards</h3>
+              <p id="awards"></p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" onclick="closemodal()" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
